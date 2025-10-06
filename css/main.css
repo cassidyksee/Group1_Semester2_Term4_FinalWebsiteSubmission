@@ -1,0 +1,129 @@
+
+body{
+    font-family: "Maven Pro", sans-serif;
+    margin: 0;
+}
+
+.watchListBtn,
+.newReleasesBtn,
+.movieLibraryBtn,
+.smallBtn {
+    font-family: "Maven Pro", sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Krona One", sans-serif;
+}
+
+h1 {
+    font-size: 18px !important;
+    color:#B5C4CC !important;
+    justify-content: centers;
+    text-align: left;
+}
+.movieTitle{
+    font-family: "Maven Pro"; sans-serif;
+    font-size: 16px;
+    text-align: left;
+    text-decoration:underline;
+    font-weight: bold;
+}
+
+.card-text{
+ font-family: "Maven Pro"; sans-serif;
+    font-size: 15px;
+    text-align: left;   
+}
+
+/* Header image */
+.header-image {
+    width: 100%;
+    height: 100vh; 
+    background-size: cover;
+    background-position: center;
+
+    display: flex;             
+    flex-direction: column;   
+    justify-content: flex-end; 
+    padding-bottom: 20px;      
+}
+
+.bottomBtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    flex: 1 1 auto;
+    min-width: 150px;
+    max-width: 190px;
+    padding: 1rem;
+    font-family: "Maven Pro", sans-serif;
+    white-space:nowrap;
+}
+
+.button-container {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.watchListBtn,
+.newReleasesBtn,
+.movieLibraryBtn,
+.smallBtn,
+.card-button {
+    color: #13333E;
+    background-color: #B5C4CC;
+    border: none;
+   
+}
+
+
+.new-releases-section, .most-popular-section {
+    min-height: 100vh; 
+    padding: 1rem 1rem;
+    background-color: #13333E;
+    text-align: center;
+}
+
+.new-releases-section, .most-popular-section h1 {
+    font-size: 32px;
+    display:flex;
+    justify-content: left;
+    white-space: nowrap;
+}
+
+.smallBtn{
+   flex: 1 1 auto;
+    min-width: 150px;
+    max-width: 190px;
+    padding: 1rem;
+    font-family: "Maven Pro", sans-serif;
+    white-space:nowrap;
+    font-size: 12px;
+   align-items:center;
+}
+
+/* New Releases */
+.card-body{
+  padding:0.1rem;
+}
+
+.card-button{
+  flex: 1 1 auto;
+    min-width: 150px;
+    max-width: 190px;
+    padding: 1rem;
+    font-family: "Maven Pro", sans-serif;
+    white-space:nowrap;
+    font-size: 12px;
+   align-items:center; 
+   margin:5px;  
+   height:100%;
+}
+
+
+    
