@@ -10,11 +10,13 @@
     <title>Home Page</title>
     
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-KNKF4cBqwBkG9nNChF+K+3Dc4JuN4TR8E8o6F2+ZQWcJrV3+q0Gk5UoR0xT1lJv0OdGFFR5QhK7xOevLVQv2Hw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
@@ -55,10 +57,11 @@
           <a class="nav-link" href="#">Library</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">&#128270;</button>
-      </form>
+     <form id="searchForm" class="d-flex" role="search">
+  <input id="searchInput" class="form-control me-2" type="search" placeholder="Search movies..." aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">&#128270;</button>
+</form>
+
     </div>
   </div>
 </nav>

@@ -44,12 +44,7 @@ class Movie {
     }
 
     const movieCardsContainer = document.getElementById("movie-cards");
-    movieCardsContainer.innerHTML = ""; // 
-
-
-
-
-const currentYear = new Date().getFullYear();
+    movieCardsContainer.innerHTML = "";
 
 
 const now = new Date();
@@ -141,12 +136,57 @@ if (popularData && popularData.results) {
 }
 
 
-
-
-
-
 }();
 
+// scroll to correct section
+document.querySelector(".movieLibraryBtn").addEventListener("click", () => {
+  document.querySelector(".most-popular-section").scrollIntoView({ behavior: "smooth" });
+});
+
+document.querySelector(".newReleasesBtn").addEventListener("click", () => {
+  document.querySelector(".new-releases-section").scrollIntoView({ behavior: "smooth" });
+});
+
+
+
+
+
+
+
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // 
+
+  const searchTerm = searchInput.value.toLowerCase().trim();
+
+  const allCards = document.querySelectorAll("#movie-cards .card, #popular-movie-cards .card");
+
+  allCards.forEach(card => {
+    const title = card.querySelector(".card-title").textContent.toLowerCase();
+    const col = card.closest(".col-6, .col-md-3, .col-lg-2");
+
+    if (title.includes(searchTerm) || searchTerm === "") {
+      col.style.display = ""; 
+    } else {
+      col.style.display = "none"; 
+    }
+  });
+});
+
+searchInput.addEventListener("input", () => {
+  const searchTerm = searchInput.value.toLowerCase().trim();
+
+  const allCards = document.querySelectorAll("#movie-cards .card, #popular-movie-cards .card");
+
+  allCards.forEach(card => {
+    const title = card.querySelector(".card-title").textContent.toLowerCase();
+    const col = card.closest(".col-6, .col-md-3, .col-lg-2");
+
+    col.style.display = title.includes(searchTerm) || searchTerm === "" ? "" : "none";
+  });
+});
 
 
 
