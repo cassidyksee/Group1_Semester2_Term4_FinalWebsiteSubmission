@@ -1,10 +1,14 @@
 
 body{
-     background: linear-gradient(to bottom, #13333E, #B7CDDE);
+    background: linear-gradient(to bottom, #13333E, #B7CDDE);
     font-family: "Maven Pro", sans-serif;
-    margin: 0;
+     padding-top: 2px;
 }
 
+html, body, section, header, nav {
+  margin: 0;
+  padding: 0;
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Krona One", sans-serif;
@@ -15,6 +19,111 @@ h1 {
     justify-content: centers;
     text-align: left;
 }
+/* 
+nav bar */
+
+* {
+  margin: 0;
+  padding: 5px 2px;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: absolute;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; 
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar .container-fluid {
+    padding: 0;
+}
+
+.navbar-brand {
+  font-weight: 1000;
+  font-size: 200px;
+  color: #13333E;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-brand img {
+  width: 70px;
+  height: 70px;
+}
+
+.logo-text{
+  font-family: 'Krona One', sans-serif;
+font-size: 20px;
+display:flex;
+align-items:center;
+  line-height: 1;          /* reduces extra space above/below */
+  margin: 0;               /* removes default spacing from h1/h2 */
+  padding: 5px 0;
+}
+
+.navbar-nav {
+  margin: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-nav .nav-link {
+  color: #13333E;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #0d4958;
+}
+
+.navbar-nav .nav-link:hover {
+  text-decoration: underline;
+}
+
+form[role="search"] input {
+  background-color: #13333E;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  height: 32px;
+}
+
+form[role="search"] input::placeholder {
+  color: #c7d3d8;
+}
+
+form[role="search"] button {
+  background-color: #13333E;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  height: 32px;
+  margin-left: 4px;
+  padding: 0 10px;
+}
+
+form[role="search"] button:hover {
+  background-color: #0d4958;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(9,42,52, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
 .mostPop{
     color:#13333E;
 
@@ -173,8 +282,7 @@ h1 {
 
 
 .seeLibraryBtn{
-    colour:##B7CDDE;
+    color:##B7CDDE;
     background-color:#13333E;
     border:none;
 }
-
