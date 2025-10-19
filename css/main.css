@@ -260,6 +260,19 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/assets/images/download\ \(7\).jpeg');
+  background-image: url('/assets/images/wallhaven-ox5me5_1920x1200\ 1.png');
 
+}
+
+.youtube-button-size{
+  width: 50px;
+  height: 50px;
+  
+}
+
+.youtube-link{
+  background: none;
+  outline: none;
+  border: none;
+  box-shadow: none; 
 }
