@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Cassidy Kwong See 252044">
+    <meta name="keywords" content=""> 
+    <title>Home Page</title>
+    
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/cassidy-main.css">
+</head>
+
+<body>
+
+
+<header class="header-image" id="movie-header">
+    <div class="flex-column bottomBtn ">
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+     <img src="assets/images/navBarLogo.png" alt="Logo">
+      <p class="logo-text">Scene it</p> 
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Favourites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Library</a>
+        </li>
+      </ul>
+     <form id="searchForm" class="d-flex" role="search">
+  <input id="searchInput" class="form-control me-2" type="search" placeholder="Search movies..." aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">&#128270;</button>
+</form>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+        <div class="button-container d-flex justify-content-center gap-2 px-3">
+            <button type="button" class="btn btn-primary movieLibraryBtn px-3 px-lg-5 px-md-4 fs-7 fs-md-7 ">
+             Movie Library
+            </button>
+
+            <button type="button" class="btn btn-primary newReleasesBtn px-3 px-lg-5 fs-7 fs-md-7 ">
+             New Releases
+            </button>  
+         </div>
+
+         <div class=" d-flex justify-content-center gap-2  px-2">
+             <button type="button" class="btn btn-primary watchListBtn px-lg-5 px-md-4 fs-7 fs-md-7 ">
+             Watch List
+             </button>
+        </div>
+  </div>
+</header>
+
+
+<section class="new-releases-section">
+    <div class="container-fluid">
+        <h1 class="mb-4 newRel" >New Releases</h1> 
+        <div class="row" id="movie-cards">
+          
+        </div>
+    </div>
+</section>
+
+<section class="most-popular-section">
+    <h1 class="mb-4 mostPop">Most Popular</h1>
+<div id="popular-movie-cards" class="row"></div>
+
+    <button type="button" class="btn btn-primary seeLibraryBtn px-3 px-lg-5 px-md-4 fs-7 fs-md-7 flex-fill"> See Movie Library</button>
+</section>
+
+<footer class="footer">
+<div class="footer-container">
+
+<div class="footer-logo">
+<img src="assets/img/footerLogo.png" alt="Company Logo">
+</div>
+
+<div class="footer-links">
+<div class="footer-column">
+<a href="#">Home</a>
+<a href="#">See Movie Library</a>
+<a href="#">My Account</a>
+</div>
+<div class="footer-column">
+<a href="#">Help Center</a>
+<a href="#">FAQ</a>
+</div>
+</div>
+
+
+<div class="footer-socials">
+<img src="assets/img/instagram.png" alt="Instagram">
+<img src="assets/img/facebook.png" alt="Facebook">
+<img src="assets/img/twitter.png" alt="X">
+<img src="assets/img/mail.png" alt="Email">
+<img src="assets/img/whatsapp.png" alt="Phone">
+</div>
+</div>
+
+<div class="footer-bottom">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms & Conditions</a>
+</div>
+</footer> 
+
+
+
+
+
+
+
+
+
+    <script src="js/cassidy-script.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
+
