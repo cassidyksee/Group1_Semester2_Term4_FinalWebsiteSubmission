@@ -133,7 +133,7 @@
         });
       }
 
-      // Adjust title font sizes safely
+      
       const movieTitles = document.querySelectorAll(".movieTitle");
       movieTitles.forEach(title => {
         const length = title.textContent.length;
@@ -146,7 +146,7 @@
         }
       });
 
-      // Popular movies section
+      
       const POPULAR_API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
       const popularResponse = await fetch(POPULAR_API_URL);
       const popularData = await popularResponse.json();
@@ -186,7 +186,7 @@
           });
       }
 
-      // Scroll buttons
+      
       const movieLibraryBtn = document.querySelector(".movieLibraryBtn");
       const newReleasesBtn = document.querySelector(".newReleasesBtn");
 
@@ -204,7 +204,7 @@
         });
       }
 
-      // Search functionality
+      
       const searchForm = document.getElementById("searchForm");
       const searchInput = document.getElementById("searchInput");
 
@@ -294,7 +294,7 @@
 
 (function () {
   const API_KEY = 'af9ffcf517dfdc93387c7d6d98ed06bc';
-  const movieId = '19995'; // Avatar example
+  const movieId = '19995';
 
   class JordanMovie {
     constructor(title, overview, director, poster_path, actors, trailer) {
