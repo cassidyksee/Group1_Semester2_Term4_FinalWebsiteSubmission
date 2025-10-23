@@ -294,7 +294,7 @@
 
 (function () {
   const API_KEY = 'af9ffcf517dfdc93387c7d6d98ed06bc';
-  const movieId = '19995';
+  const movieId = '299534';
 
   class JordanMovie {
     constructor(title, overview, director, poster_path, actors, trailer) {
@@ -308,36 +308,52 @@
   }
 
   async function getMovieDetails() {
-    try {
-      const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
-      const movieData = await movieResponse.json();
+  try {
+    const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
+    const movieData = await movieResponse.json();
 
-      const creditsResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`);
-      const creditsData = await creditsResponse.json();
+    const creditsResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`);
+    const creditsData = await creditsResponse.json();
 
-      const director = creditsData.crew.find(person => person.job === "Director");
-      const topActors = creditsData.cast.slice(0, 5).map(actor => actor.name);
+    const videoResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`);
+    const videoData = await videoResponse.json();
 
-      const directorName = director ? director.name : "Unknown";
-      const posterUrl = movieData.poster_path
-        ? `https://image.tmdb.org/t/p/w500${movieData.poster_path}`
-        : "https://via.placeholder.com/500x750?text=No+Image";
+    
+    const director = creditsData.crew.find(person => person.job === "Director");
+    const topActors = creditsData.cast.slice(0, 5).map(actor => actor.name);
+    const directorName = director ? director.name : "Unknown";
+    const posterUrl = movieData.poster_path? `https://image.tmdb.org/t/p/w500${movieData.poster_path}`: "https://via.placeholder.com/500x750?text=No+Image";
+    const trailer = videoData.results.find(video => video.site === "YouTube" && video.type === "Trailer");
 
-      const titleEl = document.getElementById('movie-title');
-      const overviewEl = document.getElementById('movie-overview');
-      const directorEl = document.getElementById('movie-director');
-      const actorsEl = document.getElementById('movie-actors');
-      const posterEl = document.getElementById('movie-poster');
+   
+    const titleEl = document.getElementById('movie-title');
+    const overviewEl = document.getElementById('movie-overview');
+    const directorEl = document.getElementById('movie-director');
+    const actorsEl = document.getElementById('movie-actors');
+    const posterEl = document.getElementById('movie-poster');
+    const iframeEl = document.getElementById("movie-trailer");
 
-      if (titleEl) titleEl.textContent = movieData.title;
-      if (overviewEl) overviewEl.textContent = movieData.overview;
-      if (directorEl) directorEl.textContent = directorName;
-      if (actorsEl) actorsEl.textContent = topActors.join(", ");
-      if (posterEl) posterEl.src = posterUrl;
-    } catch (error) {
-      console.error("Error fetching Jordan’s movie details:", error);
+    
+    if (titleEl) titleEl.textContent = movieData.title;
+    if (overviewEl) overviewEl.textContent = movieData.overview;
+    if (directorEl) directorEl.textContent = directorName;
+    if (actorsEl) actorsEl.textContent = topActors.join(", ");
+    if (posterEl) posterEl.src = posterUrl;
+
+    
+    if (trailer && iframeEl) {
+      iframeEl.src = `https://www.youtube.com/embed/${trailer.key}`;
+      iframeEl.style.display = "block"; 
+    } else if (iframeEl) {
+      iframeEl.src = "";
+      iframeEl.style.display = "none"; 
     }
+
+  } catch (error) {
+    console.error("Error, no trailer found", error);
   }
+}
+
 
   getMovieDetails();
 
@@ -354,6 +370,6 @@
       });
     });
 
-    $(".youtube-link").grtyoutube();
+    // $(".youtube-link").grtyoutube();
   });
 })();

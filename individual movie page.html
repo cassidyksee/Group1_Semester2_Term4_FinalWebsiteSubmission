@@ -53,14 +53,28 @@
           </div>
         </div>
 
-        <div class="col-12 col-md-8 mb-3">
-          <div class="trailer bg-light p-2 rounded shadow-sm" id="play-trailer-btn">
             
-            <button class="youtube-link" youtubeid="LXb3EKWsInQ">
+        <div class="col-12 col-md-8 mb-3">
+
+          <!-- Jquary implementation for the youtube trailer, this didnt work because many channels didnt allow for 3rd party websites to display their videos, but since I changed the method to using the embedding feature from youtube itself it gets around this problem and works fine.
+            <button class="youtube-link" youtubeid="https://www.youtube.com/watch?v=3ISQiqw3d4M">
               <img class="youtube-button-size" src="assets/images/play-button.png" alt="">
-            </button>
+            </button> -->
+
+          <div class="trailer bg-light p-2 rounded shadow-sm" id="play-trailer-btn">
+            <iframe 
+            width="100%" 
+            height="100%" 
+            id="movie-trailer"
+            src=""                    
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+            </iframe>
           </div>
         </div>
+
       </div>
 
       <div class="row mt-4">
