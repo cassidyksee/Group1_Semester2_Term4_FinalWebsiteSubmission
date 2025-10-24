@@ -117,14 +117,15 @@
           movieCardsContainer.innerHTML += `
             <div class="col-12 col-md-3 col-lg-2 mb-4">
               <div class="card h-100">
-                <i class="fa-solid fa-bookmark bookmark-icon"></i>
+               <a href="individual movie page.html"> <i class="fa-solid fa-bookmark bookmark-icon" ></i></a>
                 <img src="${movie.poster_path}" class="card-img-top" alt="${movie.title}">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title movieTitle">${movie.title}</h5>
                   <p class="card-text">Rating: ${movie.vote_average} ⭐</p>
                   <div class="card-button-position"></div>
                 <div class="card-button-container mt-auto">
-  <a href="#" class="btn card-button">More Info</a>
+ <a href="individual movie page.html" class="btn card-button">More Info</a>
+
 </div>
 
                 </div>
