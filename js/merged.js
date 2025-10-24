@@ -115,7 +115,7 @@
       if (movieCardsContainer) {
         filteredMovies.forEach(movie => {
           movieCardsContainer.innerHTML += `
-            <div class="col-6 col-md-3 col-lg-2 mb-4">
+            <div class="col-12 col-md-3 col-lg-2 mb-4">
               <div class="card h-100">
                 <i class="fa-solid fa-bookmark bookmark-icon"></i>
                 <img src="${movie.poster_path}" class="card-img-top" alt="${movie.title}">
@@ -123,9 +123,10 @@
                   <h5 class="card-title movieTitle">${movie.title}</h5>
                   <p class="card-text">Rating: ${movie.vote_average} ⭐</p>
                   <div class="card-button-position"></div>
-                  <div center>
-                    <a href="#" class="btn btn-primary mt-auto card-button">More Info</a>
-                  </div>
+                <div class="card-button-container mt-auto">
+  <a href="#" class="btn card-button">More Info</a>
+</div>
+
                 </div>
               </div>
             </div>
@@ -167,7 +168,7 @@
           .forEach(movie => {
             if (popularCardsContainer) {
               popularCardsContainer.innerHTML += `
-                <div class="col-6 col-md-3 col-lg-2 mb-4">
+                <div class="col-12 col-md-3 col-lg-2 mb-4">
                   <div class="card h-100">
                     <i class="fa-solid fa-bookmark bookmark-icon"></i>
                     <img src="${movie.poster_path}" class="card-img-top" alt="${movie.title}">
@@ -175,8 +176,8 @@
                       <h5 class="card-title movieTitle">${movie.title}</h5>
                       <p class="card-text">Rating: ${movie.vote_average} ⭐</p>
                       <div class="card-button-position"></div>
-                      <div center>
-                        <a href="#" class="btn btn-primary mt-auto card-button">More Info</a>
+                       <div class="card-button-container mt-auto">
+                        <a href="#" class="btn card-button">More Info</a>
                       </div>
                     </div>
                   </div>
@@ -259,8 +260,8 @@
       <img src="${poster}" alt="${movie.title}">
       <p class="movie-title">${movie.title}</p>
       <div class="rating">Rating: ${rating} ⭐</div>
-      <button>More info</button>
-    `;
+      <button class="card-button">More info</button>`
+      ;
     return card;
   }
 

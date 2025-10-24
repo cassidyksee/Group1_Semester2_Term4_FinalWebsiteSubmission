@@ -411,12 +411,16 @@ form[role="search"] button:hover {
 
 
 .mostPop{
-    color:#13333E;
+    color:#B7CDDE;
+    display:flex;
+    justify-content: flex-start;
 
 }
 
 .newRel{
     color:#B7CDDE;
+    display:flex;
+    justify-content:flex-start;
 }
 
 .movieTitle{
@@ -432,12 +436,27 @@ form[role="search"] button:hover {
 }
 
 
-.card-text {
-  font-size: clamp(0.65rem, 1vw, 0.9rem);
-  font-family: "Maven Pro", sans-serif;
-  text-align: left;
-  white-space: normal;
+.card {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  overflow: hidden;
+  height: 350px;
+  object-fit: cover;
 }
+
+.card img {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.card-body {
+  background-color: #fff; 
+  padding: 1rem;
+}
+
 
 
 .header-image {
@@ -489,16 +508,31 @@ form[role="search"] button:hover {
 .movieLibraryBtn,
 .card-button
 {
-    color: #13333E;
-    border: none;
-    padding:1rem;
-    background-color: #B7CDDE;
+  color: #13333E !important;
+  background-color: #B7CDDE !important;
+  display: inline-block;            
+  width: 100%;                    
+  max-width: 300px;                
+  padding: 1rem 2rem;               
+  font-size: 18px;                   
+  font-weight: 600;
+  text-align: center;
+  color: #B7CDDE;
+  background-color: #13333E;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
+.seeLibraryBtn:hover {
+  transform: scale(1.05);
+}
 
 .new-releases-section, .most-popular-section {
-    min-height: 100vh; 
-    padding: 1rem 1rem;
+    /* min-height: 100vh;  */
+    padding: 2rem 3rem;
     text-align: center;
 }
 
@@ -511,21 +545,29 @@ form[role="search"] button:hover {
     padding: 0.75rem;         
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
-    align-items: stretch; 
+    justify-content: center; 
+    align-items: center; 
 }
-
-
 
 
 .card-button {
-    margin-top: auto;          
-    padding: 0.75rem 1rem;     
-    font-size: clamp(0.7rem, 1vw, 1rem);  
-    width: 80%;               
-    max-width: 180px;          
-    align-self: center;       
+  width: 100%;
+  margin: 1rem auto;
+  display: block;
+  padding: 0.8rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  background: #acc6d8;
+  border-radius: 4px;
+  border: none;
+  color: #1c313d;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+
 }
+
+
+
 
 
 .card .bookmark-icon {
@@ -566,14 +608,13 @@ form[role="search"] button:hover {
     cursor: pointer;
 }
 
-
 .seeLibraryBtn{
   color:#B7CDDE;
   background-color:#13333E;
   border:none;
+  padding:1rem;
+  border-radius: 10px;
 }
-
-
 
 .footer {
   background-color: #B7CDDE; 
@@ -665,8 +706,6 @@ form[role="search"] button:hover {
     padding-top: 10px;
   }
 }
-
-
 /*David's styling*/
 
 * {
@@ -701,13 +740,13 @@ section h2 {
   overflow-x: auto;
   gap: 1rem;
   margin: 0 2rem;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 .movie-row::-webkit-scrollbar,
 .movie-grid::-webkit-scrollbar {
-  display: none; /* WebKit */
+  display: none; 
 }
 
 .movie-card {
@@ -903,8 +942,8 @@ section h2 {
 
 .background {
   background: linear-gradient(to bottom, #13333E, #B7CDDE);
-  min-height: 100vh; /* ensures it covers the full screen */
-  margin: 0; /* removes default body margin */
+  min-height: 100vh; 
+  margin: 0;
 
   display: flex;
   justify-content: center;
@@ -1222,7 +1261,7 @@ h2 {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1030;  /* ensures it stays above content */
+  z-index: 1030;  
 }
 
 .navbar-brand {

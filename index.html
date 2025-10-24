@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>SceneIt PDP PAGE</title>
-  <link rel="stylesheet" href="css/merged.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/amelie.css">
   <link rel="stylesheet" href="css/grt-youtube-popup.css">
   <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -31,9 +32,9 @@
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="home page.html" style="color: #13333E;">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="favourites page.html" style="color: #13333E;">Favourites</a></li>
-            <li class="nav-item"><a class="nav-link" href="library page.html" style="color: #13333E;">Library</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html" style="color: #13333E;">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="" style="color: #13333E;">Favourites</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page"href="PDP page.html" style="color: #13333E;">Library</a></li>
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -53,28 +54,14 @@
           </div>
         </div>
 
-            
         <div class="col-12 col-md-8 mb-3">
-
-          <!-- Jquary implementation for the youtube trailer, this didnt work because many channels didnt allow for 3rd party websites to display their videos, but since I changed the method to using the embedding feature from youtube itself it gets around this problem and works fine.
-            <button class="youtube-link" youtubeid="https://www.youtube.com/watch?v=3ISQiqw3d4M">
-              <img class="youtube-button-size" src="assets/images/play-button.png" alt="">
-            </button> -->
-
           <div class="trailer bg-light p-2 rounded shadow-sm" id="play-trailer-btn">
-            <iframe 
-            width="100%" 
-            height="100%" 
-            id="movie-trailer"
-            src=""                    
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-            </iframe>
+            
+            <button class="youtube-link" youtubeid="LXb3EKWsInQ">
+              <img class="youtube-button-size" src="assets/images/play-button.png" alt="">
+            </button>
           </div>
         </div>
-
       </div>
 
       <div class="row mt-4">
@@ -154,7 +141,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/grt-youtube-popup.js"></script>
-<script src="js/merged.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 
