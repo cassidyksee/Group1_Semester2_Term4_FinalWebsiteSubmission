@@ -472,6 +472,25 @@ form[role="search"] button:hover {
     padding-bottom: 20px;      
 }
 
+.new-releases-section, .most-popular-section {
+    /* min-height: 100vh;  */
+    padding: 2rem 3rem;
+    text-align: center;
+}
+
+.new-releases-section h1, .most-popular-section h1 {
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+}
+
+/* New Releases */
+.card-body {
+    padding: 0.75rem;         
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
  .bottomBtn {
     width: 50%;
     display: flex;
@@ -480,14 +499,12 @@ form[role="search"] button:hover {
     align-items:center;
 }
 
-
-
 .btn {
     flex: 1 1 auto;
     padding: 1rem;
     font-family: "Maven Pro", sans-serif;
     white-space:nowrap;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease; 
 }
 .btn:hover {
@@ -510,11 +527,11 @@ form[role="search"] button:hover {
 {
   color: #13333E !important;
   background-color: #B7CDDE !important;
-  display: inline-block;            
-  width: 100%;                    
-  max-width: 300px;                
-  padding: 1rem 2rem;               
-  font-size: 18px;                   
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem 2rem;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
   color: #B7CDDE;
@@ -529,26 +546,6 @@ form[role="search"] button:hover {
 .seeLibraryBtn:hover {
   transform: scale(1.05);
 }
-
-.new-releases-section, .most-popular-section {
-    /* min-height: 100vh;  */
-    padding: 2rem 3rem;
-    text-align: center;
-}
-
-.new-releases-section h1, .most-popular-section h1 {
-    font-size: clamp(1.5rem, 2vw, 2.5rem);
-}
-
-/* New Releases */
-.card-body {
-    padding: 0.75rem;         
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-}
-
 
 .card-button {
   width: 100%;
