@@ -61,7 +61,8 @@ for (let i = 0; i < favourites.length && i < 3; i++) {
 
 (function () {
   class CassidyMovie {
-    constructor(poster_path, title, vote_average, release_date) {
+    constructor(id, poster_path, title, vote_average, release_date) {
+      this.id=id;
       this.poster_path = poster_path;
       this.title = title;
       this.vote_average = vote_average;
@@ -98,7 +99,7 @@ for (let i = 0; i < favourites.length && i < 3; i++) {
         const poster_path = movie.poster_path
           ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
           : "https://via.placeholder.com/500x750?text=No+Image";
-        return new CassidyMovie(poster_path, movie.title, movie.vote_average, movie.release_date);
+        return new CassidyMovie(movie.id, poster_path, movie.title, movie.vote_average, movie.release_date);
       });
 
       const movieCardsContainer = document.getElementById("movie-cards");
@@ -116,6 +117,16 @@ for (let i = 0; i < favourites.length && i < 3; i++) {
 
     if (movieCardsContainer) {
   filteredMovies.forEach(movie => {
+const movieData ={
+  id:movie.id,
+  poster_path:movie.poster_path,
+  title:movie.title,
+  vote_average:movie.vote_average,
+  release_date:movie.release_date
+};
+
+
+
     movieCardsContainer.innerHTML += `
       <div class="col-12 col-md-3 col-lg-2 mb-4">
         <div class="card h-100">
@@ -127,7 +138,7 @@ for (let i = 0; i < favourites.length && i < 3; i++) {
             <p class="card-text">Rating: ${movie.vote_average} ⭐</p>
             <div class="card-button-position"></div>
             <div class="card-button-container mt-auto">
-              <a href="individual movie page.html" class="btn card-button">More Info</a>
+            <a href="individual movie page.html" class="btn card-button" data-movie='${JSON.stringify(movie)}'>More Info</a>
             </div>
           </div>
         </div>
@@ -154,6 +165,25 @@ for (let i = 0; i < favourites.length && i < 3; i++) {
     }
   });
 }
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("card-button")) {
+    e.preventDefault();
+
+    const movieData = JSON.parse(e.target.getAttribute("data-movie"));
+
+    if (!movieData.id && e.target.closest(".card")) {
+      const card = e.target.closest(".card");
+      const title = card.querySelector(".movieTitle")?.textContent.trim();
+      movieData.title = title || movieData.title;
+    }
+
+    console.log("Movie being saved:", movieData); 
+    localStorage.setItem("selectedMovie", JSON.stringify(movieData));
+
+    window.location.href = "individual movie page.html";
+  }
+});
 
 
       
@@ -199,7 +229,7 @@ for (let i = 0; i < favourites.length && i < 3; i++) {
                       <p class="card-text">Rating: ${movie.vote_average} ⭐</p>
                       <div class="card-button-position"></div>
                        <div class="card-button-container mt-auto">
-                        <a href="#" class="btn card-button">More Info</a>
+                     <a href="individual movie page.html" class="btn card-button" data-movie='${JSON.stringify(movie)}'>More Info</a>
                       </div>
                     </div>
                   </div>
@@ -316,8 +346,16 @@ for (let i = 0; i < favourites.length && i < 3; i++) {
 /*JORDAN'S SCRIPT*/
 
 (function () {
-  const API_KEY = 'af9ffcf517dfdc93387c7d6d98ed06bc';
-  const movieId = '299534';
+const API_KEY = 'af9ffcf517dfdc93387c7d6d98ed06bc';
+const selectedMovie = JSON.parse(localStorage.getItem("selectedMovie"));
+const movieId = selectedMovie ? selectedMovie.id : '299534';
+
+if (selectedMovie) {
+  const titleEl = document.getElementById('movie-title');
+  const posterEl = document.getElementById('movie-poster');
+  if (titleEl) titleEl.textContent = selectedMovie.title;
+  if (posterEl) posterEl.src = `https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`;
+}
 
   class JordanMovie {
     constructor(title, overview, director, poster_path, actors, trailer) {
