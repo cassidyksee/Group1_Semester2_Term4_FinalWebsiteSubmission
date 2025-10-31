@@ -209,7 +209,7 @@ document.addEventListener("click", (e) => {
           const poster_path = movie.poster_path
             ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
             : "https://via.placeholder.com/500x750?text=No+Image";
-          return new CassidyMovie(poster_path, movie.title, movie.vote_average, movie.release_date);
+          return new CassidyMovie(movie.id, poster_path, movie.title, movie.vote_average, movie.release_date);
         });
 
         const popularCardsContainer = document.getElementById("popular-movie-cards");
