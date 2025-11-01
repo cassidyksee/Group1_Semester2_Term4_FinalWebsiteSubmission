@@ -151,7 +151,6 @@ form[role="search"] button:hover {
 
 .movie-title {
   font-family: 'Maven Pro Medium', sans-serif;
-  font-size: 1rem;
 }
 
 
@@ -1011,7 +1010,7 @@ h2 {
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
-
+  margin-top: 150px;
 }
 
 .form-group input {
@@ -1032,7 +1031,7 @@ h2 {
 }
 
 
-.btn-primary {
+.btn-primary-login {
   width: 70%;
   padding: 10px;
   margin-top: 10px;
@@ -1043,8 +1042,25 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  margin-left: 15%;
+  margin-left: 40%;
 }
+
+.btn-primary-signup{
+  width: 70%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #13333E;
+  color: #B7CDDE;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 17%;
+}
+
+
+
 
 .btn-primary:hover {
   background: #ffffff;
@@ -1073,7 +1089,7 @@ h2 {
   background: #e0e0e0;
 }
 
-/* Output Box */
+
 .result-box {
   background: #f9f9f9;
   border: 1px solid #ddd;
@@ -1178,7 +1194,7 @@ h2 {
 }
 
 .movie-name{
-  font-size: 40px;
+  font-size: 10px;
   color: #ffffff;
   font-family: 'Krona One', sans-serif;
   margin-right: 50%;
