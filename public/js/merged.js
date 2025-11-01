@@ -348,7 +348,7 @@ document.addEventListener("click", (e) => {
 (function () {
 const API_KEY = 'af9ffcf517dfdc93387c7d6d98ed06bc';
 const selectedMovie = JSON.parse(localStorage.getItem("selectedMovie"));
-const movieId = selectedMovie ? selectedMovie.id : '299534';
+const movieId = selectedMovie ? selectedMovie.id : '550';
 
 if (selectedMovie) {
   const titleEl = document.getElementById('movie-title');
