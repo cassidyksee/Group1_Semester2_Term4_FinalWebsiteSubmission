@@ -151,6 +151,7 @@ form[role="search"] button:hover {
 
 .movie-title {
   font-family: 'Maven Pro Medium', sans-serif;
+  font-size: 1rem;
 }
 
 
@@ -1194,7 +1195,7 @@ h2 {
 }
 
 .movie-name{
-  font-size: 10px;
+  font-size: 40px;
   color: #ffffff;
   font-family: 'Krona One', sans-serif;
   margin-right: 50%;
