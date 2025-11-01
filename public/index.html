@@ -12,7 +12,12 @@
     
 <head>
   <script>
-  window.location.href = "login and sign up page.html";
+   const hasVisited = localStorage.getItem("hasVisited");
+
+  if (!hasVisited) {
+    localStorage.setItem("hasVisited", "true");
+    window.location.href = "login and sign up page.html";
+  }
 </script>
 
     <meta charset="UTF-8">
