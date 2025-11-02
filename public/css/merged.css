@@ -1098,7 +1098,7 @@ h2 {
   padding: 10px;
   margin-top: 10px;
   background: #13333E;
-  color: #B7CDDE;
+  color: #ffffff;
   font-size: 20px;
   border: none;
   border-radius: 5px;
@@ -1160,6 +1160,18 @@ h2 {
 
 .sign-up-text{
   padding: 20px;
+  color: #1c313d;
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
+}
+
+.login-in-text{
+  padding: 20px;
+  color: #1c313d;
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
 }
 
 .outline{
