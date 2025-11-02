@@ -100,6 +100,35 @@ form[role="search"] input {
   height: 32px;
 }
 
+.details-btn {
+  width: 50%;
+  margin: 1rem auto;
+  display: block;
+  padding: 0.8rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  background: #acc6d8;
+  border-radius: 4px;
+  border: none;
+  color: #1c313d;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.remove-btn{
+  width: 50%;
+  margin: 1rem auto;
+  display: block;
+  padding: 0.8rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  background: #b00000;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+}
 form[role="search"] input::placeholder {
   color: #c7d3d8;
 }

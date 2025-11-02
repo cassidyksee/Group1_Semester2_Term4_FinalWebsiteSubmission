@@ -2,58 +2,92 @@
 
 (function () {
   class AmelieMovie {
-    constructor(image, title, year, rating, link) {
+    constructor(image, title, year, rating, link, id) {
       this.image = image;
       this.title = title;
       this.year = year;
       this.rating = rating;
       this.link = link;
+      this.id = id;
     }
   }
 
   (async function () {
     const API_KEY = "af9ffcf517dfdc93387c7d6d98ed06bc";
-    const API_URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`;
+    const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+    const container = document.getElementById("favourites-container");
 
-    try {
-      const response = await fetch(API_URL);
-      const data = await response.json();
+   
+    container.innerHTML = "";
 
-      if (!data || !data.results) {
-        console.error("No results found for Amelie’s script");
-        return;
-      }
 
-      const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
-      const movieList = [];
+    favourites.forEach((movieData) => {
+      const image = movieData.poster_path
+        ? `https://image.tmdb.org/t/p/w500${movieData.poster_path}`
+        : "https://via.placeholder.com/500x750?text=No+Image";
+      const title = movieData.title || "Untitled";
+      const year = movieData.release_date
+        ? movieData.release_date.split("-")[0]
+        : "Unknown";
+      const rating = movieData.vote_average ?? "N/A";
+      const link = `https://www.themoviedb.org/movie/${movieData.id}`;
+      const id = movieData.id;
 
-      for (let i = 0; i < favourites.length && i < 3; i++) {
-        const movieData = favourites[i];
+      const movie = new AmelieMovie(image, title, year, rating, link, id);
 
-        const image = movieData.poster_path
-          ? `https://image.tmdb.org/t/p/w500${movieData.poster_path}`
-          : "https://via.placeholder.com/500x750?text=No+Image";
-        const title = movieData.title || "Untitled";
-        const year = movieData.release_date
-          ? movieData.release_date.split("-")[0]
-          : "Unknown";
-        const rating = movieData.vote_average ?? "N/A";
-        const link = `https://www.themoviedb.org/movie/${movieData.id}`;
+    
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.style.width = "18rem";
+    card.innerHTML = 
+  `<img src="${movie.image}" class="card-img-top movie-poster" alt="${movie.title}">
+   <div class="card-body text-center">
+     <p class="card-text movie-title">${movie.title} (${movie.year})</p>
+     <button class="details-btn" data-id="${movie.id}">More Info</button>
+     <button class="remove-btn" data-id="${movie.id}">Remove</button>
 
-        const movie = new AmelieMovie(image, title, year, rating, link);
-        movieList.push(movie);
+   </div>`;
 
-        // Safe DOM updates
-        const posterEl = document.getElementById(`poster-${i + 1}`);
-        const titleEl = document.getElementById(`title-${i + 1}`);
+   card.querySelector(".details-btn").addEventListener("click", (e) => {
+  e.stopPropagation(); 
+  
+  localStorage.setItem("selectedMovie", JSON.stringify(movie));
+  
+  window.location.href = "individual movie page.html";
+});
 
-        if (posterEl) posterEl.src = image;
-        if (titleEl) titleEl.textContent = `${title} (${year})`;
-      }
+    document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("card-button")) {
+          e.preventDefault();
 
-      console.log("Amelie Movie Objects Created:", movieList);
-    } catch (error) {
-      console.error("Error in Amelie’s script:", error);
+          const movieData = JSON.parse(e.target.getAttribute("data-movie"));
+
+          if (!movieData.id && e.target.closest(".card")) {
+            const card = e.target.closest(".card");
+            const title = card.querySelector(".movieTitle")?.textContent.trim();
+            movieData.title = title || movieData.title;
+          }
+
+          console.log("Movie being saved:", movieData);
+          localStorage.setItem("selectedMovie", JSON.stringify(movieData));
+
+          window.location.href = "individual movie page.html";
+        }
+      });
+
+   
+      card.querySelector(".remove-btn").addEventListener("click", (e) => {
+        e.stopPropagation();
+        const updated = favourites.filter((fav) => fav.id !== movie.id);
+        localStorage.setItem("favourites", JSON.stringify(updated));
+        card.remove();
+      });
+
+      container.appendChild(card);
+    });
+
+    if (favourites.length === 0) {
+      container.innerHTML = `<p style="color:white; text-align:center;">No favourites added yet!</p>`;
     }
   })();
 })();
