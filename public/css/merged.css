@@ -67,6 +67,22 @@
  width: 30px;
 }
 
+.details-btn {
+  width: 50%;
+  margin: 1rem auto;
+  display: block;
+  padding: 0.8rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  background: #acc6d8;
+  border-radius: 4px;
+  border: none;
+  color: #1c313d;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+
+}
+
 
 .navbar-nav .nav-link {
   color: #13333E;
@@ -126,6 +142,19 @@ form[role="search"] button:hover {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(9,42,52, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
   
+.navbar-collapse {
+  justify-content: center !important;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    padding: 20px;
+  }
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
 .favourites-section {
   background-color: #13333E; 
   display: flex;
@@ -164,6 +193,22 @@ form[role="search"] button:hover {
   min-height: 1000px;
 }
 
+.remove-btn {
+  background-color: #b81d24;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: #e50914;
+}
+
+
 .card {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px; 
@@ -176,14 +221,12 @@ form[role="search"] button:hover {
 }
 
 
-
-
-
 .footer {
   background-color: #B7CDDE; 
   color: #fff;
   padding: 40px 20px;
   font-family: 'Lato', sans-serif;
+  min-height: auto;
 }
 
 .footer a {
@@ -270,17 +313,15 @@ form[role="search"] button:hover {
   }
 }
 
+.navbar-collapse {
+  justify-content: center !important;
+}
 
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 992px) {
+  .navbar-collapse {
+    padding: 20px;
+  }
+}
 
 /*Cassidy's styling*/
 
