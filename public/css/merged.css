@@ -753,15 +753,22 @@ body {
   color: #fff;
 }
 
+.library-cards {
+  margin-top: 77px;
+  padding: 2rem 3rem;
+}
+
 section {
   padding: 1rem 0;
 }
 
 section h2 {
   margin-bottom: 1rem;
-  padding: 0 2rem;
   font-size: 32px;
   font-family: 'Krona One', cursive;
+      color:#B7CDDE;
+    display:flex;
+    justify-content: flex-start;
 }
 
 .movie-row,
