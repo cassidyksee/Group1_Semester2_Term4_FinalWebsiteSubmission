@@ -554,11 +554,12 @@
       const director = creditsData.crew.find(
         (person) => person.job === "Director"
       );
+
       const topActors = creditsData.cast.slice(0, 5).map((actor) => actor.name);
       const directorName = director ? director.name : "Unknown";
       const posterUrl = movieData.poster_path
-        ? `https://image.tmdb.org/t/p/w500${movieData.poster_path}`
-        : "https://via.placeholder.com/500x750?text=No+Image";
+       ? `https://image.tmdb.org/t/p/w500${movieData.poster_path}`
+       : "";
       const trailer = videoData.results.find(
         (video) => video.site === "YouTube" && video.type === "Trailer"
       );
